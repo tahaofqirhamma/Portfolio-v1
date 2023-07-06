@@ -1,0 +1,666 @@
+@import 'utilities';
+
+
+main {
+    background-color: $prm-clr;
+    position: relative;
+    overflow-y: hidden;
+    height: 100vh;
+
+    .section {
+        background-color: $prm-clr;
+        z-index: 200;
+        position: fixed;
+        overflow: hidden;
+        inset: 0;
+        height: 100vh;
+        opacity: 100%;
+        width: 100vw;
+        transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+        @include flex(row, center, center);
+
+        .logo {
+            width: 50% !important
+        }
+    }
+
+    .navbar {
+        @include flex(row, space-between, center);
+
+        .logo {
+            padding: 1rem;
+            width: 10%;
+            height: 10%;
+        }
+
+        .links {
+            @include flex(row, space-between, center);
+            gap: 1rem;
+
+            .link {
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+
+                    span {
+                        @include font($scnd-clr, 1rem, 400);
+                    }
+
+                    @include font($natural-one, 1rem, 400);
+
+                }
+            }
+        }
+
+        .hum-menu {
+            display: none;
+            height: 2rem;
+            cursor: pointer;
+        }
+    }
+
+    .menu {
+        @include flex(column, flex-start, center);
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid $scnd-clr;
+        animation: slidein 2s forwards;
+
+        .close-menu {
+            @include flex(row, flex-end, center);
+            width: 90%;
+            padding: 1rem;
+
+            svg {
+                fill: $scnd-clr;
+                height: 2rem;
+            }
+
+        }
+
+        a {
+            text-decoration: none;
+            @include font($scnd-clr, 1rem, 600)
+        }
+
+        .links {
+            @include flex(column, space-between, center);
+            gap: 2rem;
+            padding: 2rem;
+
+            .link {
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+
+                    span {
+                        @include font($scnd-clr, 1rem, 400);
+                    }
+
+                    @include font($natural-one, 1rem, 400);
+
+                }
+            }
+        }
+    }
+
+    .home {
+        height: 70.5vh;
+        @include flex(column, space-around, flex-start);
+
+        .showcase {
+            @include flex(column, flex-start, flex-start);
+            gap: 1px;
+
+            .subtitle {
+                font-family: 'SF Mono',
+                    'Fira Code',
+                    'Fira Mono',
+                    'Roboto Mono',
+                    monospace;
+                @include font($scnd-clr, 1rem, 400);
+            }
+
+            h1 {
+                @include font($natural-one, 5rem, 600);
+            }
+
+            h2 {
+                @include font(#ffff0096, 3rem, 600);
+            }
+
+            p {
+                @include font($scnd-clr, 4rem, 600);
+
+                span {
+                    @include font($natural-one, 4rem, 600);
+                }
+            }
+        }
+    }
+
+    .personal-links {
+        height: 20vh;
+        @include flex(column, center, center);
+        gap: 1rem;
+
+        .links {
+            @include flex(row, center, center);
+            gap: 1rem;
+
+            a {
+                svg {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    stroke: $natural-one;
+                }
+
+                :hover {
+                    stroke: $scnd-clr;
+
+                }
+            }
+        }
+
+        .mail {
+            @include flex(row, center, center);
+            gap: 1rem;
+
+            hr {
+                width: 5rem;
+                height: 0.1rem;
+                border: none;
+                background-color: $scnd-clr;
+            }
+
+            p {
+                @include font($scnd-clr, 1rem, 400);
+            }
+        }
+    }
+
+    //==========================================================
+    .about {
+        height: auto;
+        @include flex(row, flex-start, center);
+        gap: 3rem;
+
+        article {
+            width: 50%;
+
+            .title {
+                @include flex(row, flex-start, center);
+                gap: 1rem;
+
+                p {
+                    @include font($natural-one, 2rem, 600);
+
+                    span {
+                        @include font($scnd-clr, 2rem, 400);
+                    }
+                }
+
+                hr {
+                    width: 30rem;
+                    height: 0.1rem;
+                    border: none;
+                    background-color: $scnd-clr;
+                }
+
+            }
+
+            .desc {
+                @include font($natural-one, 1rem, 400);
+
+                line-height: 1.9;
+
+                span {
+                    @include font($scnd-clr, 1rem, 400);
+                }
+            }
+        }
+
+        .techs {
+            @include flex(column, center, center);
+            width: 50%;
+            gap: 1rem;
+
+            .tech {
+                @include flex(row, center, center);
+                flex-wrap: wrap;
+                gap: 8rem;
+
+                .t {
+                    @include flex(column, center, center);
+                    gap: 1rem;
+
+                    svg {
+                        fill: $natural-one;
+                        width: 5rem;
+                        height: 5rem;
+                        cursor: pointer;
+
+                        &:nth-child(even) {
+                            fill: $scnd-clr !important;
+                        }
+
+                    }
+
+                    p {
+                        @include font($scnd-clr, 1rem, 400);
+                    }
+
+                }
+            }
+        }
+    }
+
+    //====================
+
+    .experience {
+        height: 50vh;
+        @include flex(row-reverse, space-between, center);
+        gap: 3rem;
+
+        article {
+            width: 55%;
+
+            .title {
+                @include flex(row, flex-start, center);
+                gap: 1rem;
+
+
+                p {
+                    @include font($natural-one, 2rem, 600);
+
+                    span {
+                        @include font($scnd-clr, 2rem, 400);
+                    }
+                }
+
+                hr {
+                    width: 30rem;
+                    height: 0.1rem;
+                    border: none;
+                    background-color: $scnd-clr;
+                }
+
+            }
+
+            .desc {
+                @include font($natural-one, 1rem, 400);
+
+                line-height: 1.9;
+
+                span {
+                    @include font($scnd-clr, 1rem, 400);
+                }
+            }
+        }
+
+        .works {
+            margin-top: 8rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            border-left: 2px $scnd-clr solid;
+
+            .companies {
+                padding: 0.6rem;
+                list-style-type: none;
+
+                .companie {
+                    @include font($scnd-clr, 1rem, 600);
+                }
+            }
+
+            .details {
+                .detail {
+                    .role {
+                        @include font($natural-one, 1rem, 600);
+
+                        span {
+                            @include font($scnd-clr, 1.3rem, 600);
+                        }
+                    }
+
+                    .duration {
+                        @include font(#ffff0096, 0.9em, 300);
+                    }
+
+                    .roles {
+                        list-style-type: square;
+                        @include font(#ffffffa7, 0.9rem, 400);
+
+                    }
+                }
+            }
+
+        }
+    }
+
+    .porjects {
+        height: auto;
+
+        article {
+            margin-bottom: 3rem;
+
+            .title {
+                @include flex(row, flex-start, center);
+                gap: 1rem;
+
+                p {
+                    @include font($natural-one, 2rem, 600);
+
+                    span {
+                        @include font($scnd-clr, 2rem, 400);
+                    }
+                }
+
+                hr {
+                    width: 30rem;
+                    height: 0.1rem;
+                    border: none;
+                    background-color: $scnd-clr;
+                }
+
+            }
+
+        }
+
+        .projects-list {
+            @include flex(column, center, center);
+            gap: 9rem;
+
+            .project {
+                @include flex(row, flex-start, center);
+                position: relative;
+
+                &:nth-child(even) {
+                    @include flex(row-reverse, flex-start, center);
+                }
+
+                .test {
+                    width: 695px;
+                    height: 400px;
+                    background-color: #1f2d50a6;
+                    position: absolute;
+                    border-radius: 0rem;
+                    transition: background-color 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: #ffff0000;
+                    }
+                }
+
+
+                .project-img {
+                    width: 900px;
+                    height: 400px;
+                    border-radius: 0rem;
+                }
+
+                #prj2 {
+                    margin-right: -5Rem;
+
+
+                    .project-titel {
+                        margin-right: 5rem;
+                    }
+
+                    .project-techs {
+                        margin-right: 5rem;
+                    }
+
+                    .project-view {
+                        margin-right: 5rem;
+                    }
+
+                }
+
+                .project-info {
+                    padding: 9rem 3rem;
+                    margin-left: -5Rem;
+                    @include flex(column, flex-start, flex-end);
+                    border: 2px $scnd-clr solid;
+                    gap: 1rem;
+                    border-right: none;
+                    border-left: none;
+
+                    .project-titel {
+                        @include font($scnd-clr, 1.7rem, 500);
+                    }
+
+                    .project-desc {
+                        @include font($natural-one, 1rem, 400);
+                        background-color: $prm-clr2;
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+                        padding: 1rem;
+                        border-radius: 0rem;
+                        z-index: 1;
+                    }
+
+
+
+                    .project-techs {
+                        list-style-type: none;
+                        @include flex(row, flex-start, center);
+                        gap: 3rem;
+
+                        .tech {
+                            @include font(#ffffffa7, 0.9rem, 400);
+                        }
+                    }
+
+                    .project-view {
+                        a {
+                            svg {
+                                height: 1.5rem;
+                                width: 1.5rem;
+                                stroke: $natural-one;
+                            }
+
+                            :hover {
+                                stroke: $scnd-clr;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .more {
+            @include flex(row, center, center);
+            padding: 5rem 0;
+
+            a {
+                text-decoration: none;
+                background-color: $scnd-clr;
+                padding: 0.5rem 4rem;
+                @include font($prm-clr, 1rem, 600);
+
+                &:hover {
+                    background-color: $natural-one;
+                    @include font($prm-clr, 1rem, 600);
+
+                }
+
+            }
+        }
+
+    }
+
+    .contact {
+        @include flex(row-reverse, space-between, center);
+        gap: 3rem;
+
+        article {
+
+            .title {
+                @include flex(row, flex-start, center);
+                gap: 1rem;
+
+                p {
+                    @include font($natural-one, 2rem, 600);
+
+                    span {
+                        @include font($scnd-clr, 2rem, 400);
+                    }
+                }
+
+                hr {
+                    width: 30rem;
+                    height: 0.1rem;
+                    border: none;
+                    background-color: $scnd-clr;
+                }
+            }
+
+            .desc {
+                @include font($natural-one, 1rem, 400);
+                line-height: 1.9;
+
+                span {
+                    @include font($scnd-clr, 1rem, 400);
+                }
+            }
+        }
+    }
+
+    .contact-control {
+        margin-top: 4rem;
+        height: 90vh;
+        @include flex(row, center, flex-start);
+        gap: 15rem;
+
+        .form {
+            @include flex(column, center, stretch);
+            gap: 2rem;
+
+            p {
+                text-align: center;
+                @include font($scnd-clr, 2rem, 600);
+            }
+
+            input {
+                background-color: transparent;
+                border: 2px $scnd-clr solid;
+                width: 25rem;
+                padding: 1rem 0.7rem;
+                text-align: start;
+                outline: $scnd-clr;
+                @include font($scnd-clr, 1rem, 500);
+            }
+
+            textarea {
+                background-color: transparent;
+                border: 2px $scnd-clr solid;
+                padding: 1rem 0.7rem;
+                text-align: start;
+                outline: $scnd-clr;
+                @include font($scnd-clr, 1rem, 500);
+            }
+
+            button {
+                background-color: $scnd-clr;
+                padding: 1rem 0.7rem;
+                @include font($prm-clr, 1rem, 600);
+                border: none;
+            }
+        }
+
+        .border {
+            height: 20rem;
+            width: 0.1rem;
+            background-color: $scnd-clr;
+        }
+
+        .contact-info {
+            p {
+                text-align: center;
+                @include font($natural-one, 2rem, 600);
+            }
+
+            .contact-links {
+                @include flex(column, center, baseline);
+                gap: 2rem;
+                list-style-type: none;
+
+                li {
+                    @include font($scnd-clr, 1rem, 500);
+                    @include flex(row, center, center);
+                    gap: 1rem;
+
+                    &:hover {
+                        @include font($natural-one, 1rem, 500);
+                    }
+
+                    svg {
+                        height: 1.5rem;
+                        width: 1.5rem;
+
+                        &:hover {
+                            @include font($natural-one, 1rem, 500);
+                        }
+                    }
+
+
+
+                    a {
+                        @include font($scnd-clr, 1rem, 500);
+                        text-decoration: none;
+
+                        &:hover {
+                            @include font($natural-one, 1rem, 500);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .cpr {
+        @include flex(row, center, center);
+        padding: 2.5rem 0;
+
+        p {
+            @include font($scnd-clr, 1rem, 400);
+        }
+    }
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-0%);
+    }
+}
+
+// @keyframes begin {
+//     0% {
+//         height: 100vh;
+//     }
+
+//     50% {
+//         height: 50vh;
+//     }
+
+//     100% {
+//         height: 0vh;
+//         display: none !important;
+//     }
+// }

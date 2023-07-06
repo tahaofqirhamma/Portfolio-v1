@@ -1,0 +1,383 @@
+@import "utilities";
+
+@media screen and (max-width:769px) {
+    main {
+        .navbar {
+            .logo {
+                padding: 1rem;
+                width: 15%;
+                height: 15%;
+            }
+
+            .links {
+                display: none;
+            }
+
+            .hum-menu {
+                display: block;
+            }
+        }
+
+        //================
+
+        .home {
+            @include flex(column, space-around, center);
+
+            .showcase {
+                @include flex(column, center, center);
+
+                h1 {
+                    @include font($natural-one, 2.5rem, 600);
+                }
+
+                h2 {
+                    @include font(#ffff0096, 1.5rem, 600);
+                }
+
+                p {
+                    @include font($scnd-clr, 2rem, 600);
+
+                    span {
+                        @include font($natural-one, 2rem, 600);
+                    }
+                }
+            }
+
+        }
+
+        // =============
+        .about {
+            @include flex(column, center, center);
+
+            article {
+                .title {
+                    @include flex(column, center, center);
+                    gap: 0.5rem;
+                }
+
+                p {
+                    text-align: justify;
+                    padding: 0.3rem 0;
+                }
+            }
+
+            .techs {
+                .tech {
+                    gap: 3rem;
+                }
+            }
+        }
+
+        // ================
+        .experience {
+            margin-top: 3rem;
+            height: auto;
+            @include flex(column, space-around, center);
+            gap: 1.5rem;
+
+            article {
+                .title {
+                    @include flex(column, center, center);
+                    gap: 0.5rem;
+                }
+
+                p {
+                    text-align: justify;
+                    padding: 0.3rem 0;
+                }
+            }
+
+            .works {
+                margin: 1rem 0 5rem 0;
+                align-items: center;
+                justify-items: center;
+
+            }
+        }
+
+        // =================
+        .porjects {
+            overflow: hidden;
+            @include flex(column, center, center);
+
+            article {
+                .title {
+                    @include flex(column, center, center);
+                    gap: 0.5rem;
+                }
+            }
+
+            .projects-list {
+                .project {
+                    .test {
+                        width: 695px;
+                        height: 400px;
+                        background-color: #1f2d50a6;
+                        position: absolute;
+                        border-radius: 0rem;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease-in-out;
+
+                        &:hover {
+                            background-color: #ffff0000;
+                        }
+                    }
+
+                    .project-img {
+                        width: 300px;
+                        height: 250px;
+                        border-radius: 0rem;
+                        cursor: pointer;
+                    }
+
+                    #prj2 {
+                        margin-right: -5rem;
+                    }
+
+                    .project-info {
+                        padding: 3rem;
+                    }
+                }
+            }
+        }
+
+        //==============
+        .contact {
+            @include flex(column, center, center);
+
+            article {
+                .title {
+                    @include flex(column, center, center);
+                    gap: 0.5rem;
+                }
+
+                p {
+                    text-align: justify;
+                    padding: 0.3rem 0;
+                }
+            }
+        }
+
+        .contact-control {
+            height: auto;
+            @include flex(column, center, center);
+            gap: 4rem;
+
+            .border {
+                display: none;
+            }
+
+            .contact-links {
+                @include flex(column, center, center);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 486px) {
+    main {
+        .navbar {
+            .logo {
+                // padding: 1rem;
+                width: 30%;
+                height: 30%;
+            }
+
+        }
+
+        .menu {
+            width: 100%;
+        }
+
+        .home {
+            .showcase {
+                text-align: center;
+
+                h1 {
+                    @include font($natural-one, 2rem, 600);
+                }
+            }
+        }
+
+        .personal-links {
+            overflow: hidden;
+        }
+
+        .about {
+            overflow: hidden;
+
+            article {
+                width: 80%;
+
+                .title {
+                    hr {
+                        width: 21rem;
+                    }
+                }
+
+                .desc {
+                    overflow: hidden;
+                    width: 250px;
+                }
+            }
+
+            .techs {
+                .tech {
+                    @include flex(row, center, center);
+                    // flex-wrap: nowrap;
+
+                    .t {
+                        svg {
+                            height: 2.5rem;
+                            width: 2.5rem;
+                        }
+
+                        p {
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .experience {
+            overflow: hidden;
+
+            article {
+                width: 80%;
+
+                .title {
+                    hr {
+                        width: 21rem;
+                    }
+                }
+
+                .desc {
+                    overflow: hidden;
+                    width: 250px;
+                }
+            }
+        }
+
+        .porjects {
+
+            article {
+                width: 80%;
+
+                .title {
+                    hr {
+                        width: 21rem;
+                    }
+                }
+
+
+            }
+
+            .projects-list {
+
+                .project {
+                    @include flex(row, flex-start, center);
+                    position: relative;
+                    overflow-x: scroll;
+                    overflow-y: visible;
+
+                    &:nth-child(even) {
+                        @include flex(row-reverse, flex-start, center);
+                    }
+
+                    .test {
+
+                        background-color: #1f2d50a6;
+                        position: absolute;
+                        border-radius: 0rem;
+                        transition: background-color 0.3s ease-in-out;
+
+                        &:hover {
+                            background-color: #ffff0000;
+                        }
+                    }
+
+
+                    .project-info {
+                        padding: 0rem;
+                        // margin-left: -5Rem;
+                        @include flex(column, flex-start, flex-end);
+
+
+                        .project-titel {
+                            @include font($scnd-clr, 1.35rem, 500);
+                        }
+
+                        .project-desc {
+                            @include font($natural-one, 0.7rem, 400);
+                            padding: 0.5rem;
+
+                        }
+
+
+
+                        .project-techs {
+                            list-style-type: none;
+                            @include flex(row, flex-start, center);
+
+                            gap: 1rem;
+
+                            .tech {
+                                @include font(#ffffffa7, 0.9rem, 400);
+                            }
+                        }
+
+                        .project-view {
+                            a {
+                                svg {
+                                    height: 1.5rem;
+                                    width: 1.5rem;
+                                    stroke: $natural-one;
+                                    margin: 0 0.5rem;
+                                }
+
+                                :hover {
+                                    stroke: $scnd-clr;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact {
+            overflow: hidden;
+
+            article {
+                width: 80%;
+
+                .title {
+                    hr {
+                        width: 21rem;
+                    }
+                }
+
+                .desc {
+                    overflow: hidden;
+                    width: 250px;
+                }
+            }
+        }
+
+        .contact-control {
+            .form {
+                input {
+                    width: 20rem;
+                }
+            }
+
+            .contact-info {
+                @include flex(column, center, flex-end);
+                gap: 1Rem;
+            }
+        }
+    }
+}

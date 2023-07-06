@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    overflow: auto;
+
+}
+
+//>>>>>>>>>>>>>>>>Typoghrafy<<<<<<<<<<<<<<<<
+
+@mixin font($color, $size, $weight) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+//>>>>>>>>>>>>>>>Flex & Grid<<<<<<<<<<<<<<<<<<<<<
+
+@mixin flex($dire, $justf, $align) {
+    display: flex;
+    flex-direction: $dire;
+    justify-content: $justf;
+    align-items: $align;
+}
+
+// ========================
+
+$prm-clr : hsl(223, 44%, 22%);
+$prm-clr2 : hsl(223, 60%, 22%);
+$scnd-clr: #ffff00;
+$natural-one: #fff;

@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  overflow: auto;
+}
+
+@media screen and (max-width: 769px) {
+  main .navbar .logo {
+    padding: 1rem;
+    width: 15%;
+    height: 15%;
+  }
+  main .navbar .links {
+    display: none;
+  }
+  main .navbar .hum-menu {
+    display: block;
+  }
+  main .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  main .home .showcase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .home .showcase h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  main .home .showcase h2 {
+    color: rgba(255, 255, 0, 0.5882352941);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  main .home .showcase p {
+    color: #ffff00;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  main .home .showcase p span {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  main .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .about article .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  main .about article p {
+    text-align: justify;
+    padding: 0.3rem 0;
+  }
+  main .about .techs .tech {
+    gap: 3rem;
+  }
+  main .experience {
+    margin-top: 3rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  main .experience article .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  main .experience article p {
+    text-align: justify;
+    padding: 0.3rem 0;
+  }
+  main .experience .works {
+    margin: 1rem 0 5rem 0;
+    align-items: center;
+    justify-items: center;
+  }
+  main .porjects {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .porjects article .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  main .porjects .projects-list .project .test {
+    width: 695px;
+    height: 400px;
+    background-color: rgba(31, 45, 80, 0.6509803922);
+    position: absolute;
+    border-radius: 0rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  main .porjects .projects-list .project .test:hover {
+    background-color: rgba(255, 255, 0, 0);
+  }
+  main .porjects .projects-list .project .project-img {
+    width: 300px;
+    height: 250px;
+    border-radius: 0rem;
+    cursor: pointer;
+  }
+  main .porjects .projects-list .project #prj2 {
+    margin-right: -5rem;
+  }
+  main .porjects .projects-list .project .project-info {
+    padding: 3rem;
+  }
+  main .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .contact article .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  main .contact article p {
+    text-align: justify;
+    padding: 0.3rem 0;
+  }
+  main .contact-control {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+  main .contact-control .border {
+    display: none;
+  }
+  main .contact-control .contact-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 486px) {
+  main .navbar .logo {
+    width: 30%;
+    height: 30%;
+  }
+  main .menu {
+    width: 100%;
+  }
+  main .home .showcase {
+    text-align: center;
+  }
+  main .home .showcase h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  main .personal-links {
+    overflow: hidden;
+  }
+  main .about {
+    overflow: hidden;
+  }
+  main .about article {
+    width: 80%;
+  }
+  main .about article .title hr {
+    width: 21rem;
+  }
+  main .about article .desc {
+    overflow: hidden;
+    width: 250px;
+  }
+  main .about .techs .tech {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  main .about .techs .tech .t svg {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  main .about .techs .tech .t p {
+    font-size: 0.7rem;
+  }
+  main .experience {
+    overflow: hidden;
+  }
+  main .experience article {
+    width: 80%;
+  }
+  main .experience article .title hr {
+    width: 21rem;
+  }
+  main .experience article .desc {
+    overflow: hidden;
+    width: 250px;
+  }
+  main .porjects article {
+    width: 80%;
+  }
+  main .porjects article .title hr {
+    width: 21rem;
+  }
+  main .porjects .projects-list .project {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: visible;
+  }
+  main .porjects .projects-list .project:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  main .porjects .projects-list .project .test {
+    background-color: rgba(31, 45, 80, 0.6509803922);
+    position: absolute;
+    border-radius: 0rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  main .porjects .projects-list .project .test:hover {
+    background-color: rgba(255, 255, 0, 0);
+  }
+  main .porjects .projects-list .project .project-info {
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  main .porjects .projects-list .project .project-info .project-titel {
+    color: #ffff00;
+    font-size: 1.35rem;
+    font-weight: 500;
+  }
+  main .porjects .projects-list .project .project-info .project-desc {
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 400;
+    padding: 0.5rem;
+  }
+  main .porjects .projects-list .project .project-info .project-techs {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+  main .porjects .projects-list .project .project-info .project-techs .tech {
+    color: rgba(255, 255, 255, 0.6549019608);
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+  main .porjects .projects-list .project .project-info .project-view a svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    stroke: #fff;
+    margin: 0 0.5rem;
+  }
+  main .porjects .projects-list .project .project-info .project-view a :hover {
+    stroke: #ffff00;
+  }
+  main .contact {
+    overflow: hidden;
+  }
+  main .contact article {
+    width: 80%;
+  }
+  main .contact article .title hr {
+    width: 21rem;
+  }
+  main .contact article .desc {
+    overflow: hidden;
+    width: 250px;
+  }
+  main .contact-control .form input {
+    width: 20rem;
+  }
+  main .contact-control .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1Rem;
+  }
+}/*# sourceMappingURL=mediaQuery.css.map */
